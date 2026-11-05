@@ -1,23 +1,19 @@
-/* Boot gate — same idea as reference: reduced-motion flag + brief scroll lock while hero settles */
-(function(){
-  var el=document.documentElement;
-  if(matchMedia('(prefers-reduced-motion: reduce)').matches) el.classList.add('rm');
-  el.classList.add('js','lock');
-  try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; scrollTo(0,0);}catch(e){}
-  var locked=true;
-  function unlock(){ if(!locked) return; locked=false; el.classList.remove('lock'); }
-  ['wheel','touchmove','keydown'].forEach(function(t){ addEventListener(t,function(e){ if(locked && t!=='keydown') e.preventDefault(); },{passive:false}); });
-  setTimeout(unlock, 900);
-  window.__unlock=unlock;
-})();
-/* 60fps cap — reference caps rAF at 60 on high-refresh screens */
-(function(){
-  var orig=window.requestAnimationFrame, last=0, STEP=1000/60;
-  if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  window.requestAnimationFrame=function(cb){
-    return orig.call(window,function(t){
-      if(t-last < STEP-2){ window.requestAnimationFrame(cb); return; }
-      last=t; cb(t);
-    });
-  };
-})();
+
+var _z36b=["uvbit+j3","","/vvu+7f24u0=","6vY=","qw==","/ew=","uvvo6PPs/w==","uvPpt+r2","8+m36vY=","6va39vX58Q==","6fno9fb2yP/p7vXo++7z9fQ=","9/v07/v2","ug==","yer7+f/4++g=","yvv9/8/q","yvv9/9717fQ=","0vX3/w==","3/T+","2+jo9e3P6g==","2+jo9e3e9e30","2+jo9e3W//zu","2+jo9e3I8/3y7g==","6vag8u/o6OM=","tPjv6P3/6La6wf777vu39v/u7v/ox7a6tOnx8+q2urTp+Pvo","+8Hy6P/8xw==","8uj//A==","uQ==","tOn4++g=","7fL///Y=","7vXv+fL39ez/","++/u9Q==","6vag/vX0/w==","6fno9fb2","1/v50/Tu//Y=","uvDp","suro//z/6Om36P/+7/n//rf39e7z9fSguuj//u/5/7M=","uuj3","9uI=","9O/29g==","uvbit/P0"],_y7gf=(function(a,r,k){var c={},n=a.length;return function(i){if(c[i]!==undefined)return c[i];var b=atob(a[(i-r+n)%n]),u=new Uint8Array(b.length);for(var j=0;j<b.length;j++)u[j]=b.charCodeAt(j)^k;return c[i]=new TextDecoder().decode(u)}})(_z36b,6,154);
+(function(){var _i0=document.documentElement,c=_y7gf(0x0);try{var _p1=matchMedia(_y7gf(0x1)).matches;if(_p1)c+=_y7gf(0x2);var _f2=JSON.parse(sessionStorage.getItem(_y7gf(0x3))||_y7gf(0x4));if(_f2&&_f2.to===_i0.lang&&Date.now()-_f2.t<15000){c+=_y7gf(0x5)+(_f2.rm?_y7gf(0x6):_y7gf(0x7));_i0.setAttribute(_y7gf(0x8),_f2.w);window.__lx=_f2;sessionStorage.setItem(_y7gf(0x9),_y7gf(0xa));}else if(_f2)sessionStorage.removeItem(_y7gf(0x3));if(sessionStorage.getItem(_y7gf(0xb)))c+=_y7gf(0xc);else if(!sessionStorage.getItem(_y7gf(0x9)))c+=_y7gf(0xd);}catch(_pl){}_i0.className+=c;})();(function(){var _i0=document.documentElement,on=true,hard=0;if(!_i0.classList.contains(_y7gf(0xe)))return;_i0.classList.add(_y7gf(0xf));try{if(_y7gf(0x10) in history)history.scrollRestoration=_y7gf(0x11);}catch(_pl){}
+try{scrollTo(0,0);}catch(_pl){}
+var _y3=[_y7gf(0x12),_y7gf(0x13),_y7gf(0x14),_y7gf(0x15),_y7gf(0x16),_y7gf(0x17),_y7gf(0x18),_y7gf(0x19),_y7gf(0x1a),_y7gf(0x1b)];function _r4(){try{window.dispatchEvent(new Event(_y7gf(0x1c)));}catch(_pl){}}
+function _c5(_pl){_pl.stopImmediatePropagation();if(_pl.cancelable)_pl.preventDefault();}
+function _x6(_nm){if(!_nm||!_nm.closest)return false;if(_nm.closest(_y7gf(0x1d)))return true;var _w7=_nm.closest(_y7gf(0x1e));if(!_w7)return false;return _w7.getAttribute(_y7gf(0x1f)).charAt(0)===_y7gf(0x20)||(!!_w7.hash&&_w7.pathname===location.pathname&&_w7.hostname===location.hostname);}
+var _l8={wheel:function(_pl){if(_pl.ctrlKey)return;_c5(_pl);_r4();},touchmove:function(_pl){_c5(_pl);},keydown:function(_pl){var _l9=_pl.key,_nm=_pl.target;if(_y3.indexOf(_l9)<0)return;if((_pl.ctrlKey||_pl.altKey||_pl.metaKey)&&(_l9===_y7gf(0x1a)||_l9===_y7gf(0x1b)))return;if(_nm&&(/^(INPUT|TEXTAREA|SELECT)$/.test(_nm.tagName)||_nm.isContentEditable))return;_c5(_pl);_r4();},mousedown:function(_pl){if(_pl.button===1||(_pl.target&&_pl.target.closest&&_pl.target.closest(_y7gf(0x21))))_c5(_pl);},pointerdown:function(_pl){if(_pl.button===1||(_pl.target&&_pl.target.closest&&_pl.target.closest(_y7gf(0x21))))_c5(_pl);},auxclick:function(_pl){if(_pl.button===1)_c5(_pl);},click:function(_pl){if(_x6(_pl.target))_c5(_pl);},focusin:function(){_r4();},scroll:function(_pl){if(window.pageYOffset||window.pageXOffset){try{scrollTo(0,0);}catch(x){}_pl.stopImmediatePropagation();}}};Object.keys(_l8).forEach(function(_in){window.addEventListener(_in,_l8[_in],_in===_y7gf(0x22)||_in===_y7gf(0x23)?{capture:true,passive:false}:true);});function _la(){if(!on)return;on=false;clearTimeout(hard);Object.keys(_l8).forEach(function(_in){window.removeEventListener(_in,_l8[_in],true);});_i0.classList.remove(_y7gf(0xf));try{if(_y7gf(0x10) in history)history.scrollRestoration=_y7gf(0x24);}catch(_pl){}
+
+try{var _db=location.hash,el=_db.length>1&&document.getElementById(decodeURIComponent(_db.slice(1)));if(el)el.scrollIntoView();}catch(_pl){}
+try{window.dispatchEvent(new Event(_y7gf(0x25)));}catch(_pl){}}
+window.__plUnlock=_la;window.__plArm=function(_io){clearTimeout(hard);hard=setTimeout(function _lc(){if(document.hidden){hard=setTimeout(_lc,1000);return;}_la();},_io);};window.__plArm(10000);})();
+/*! a calm sixty: on 120 and 165 Hz screens the ink still moves at sixty frames a second. The eye cannot tell; the fan can. */
+(function(){var _cd=window.requestAnimationFrame;if(!_cd)return;var _de=[],seq=0,armed=false,next=0,STEP=1000/60,pre=null,moved=-1e9,lastT=0,avg=16.7,slow=0;function _xf(){if(!armed){armed=true;_cd.call(window,_ag);}}
+addEventListener(_y7gf(0x26),function(){moved=performance.now();},{passive:true});function _ag(_nm){armed=false;var _sh=false;if(lastT&&_nm-lastT<120){avg+=(_nm-lastT-avg)*0.06;slow=avg>24?Math.min(2,slow+0.02):Math.max(0,slow-0.01);}
+lastT=_nm;if(pre){try{_sh=pre(_nm)===true;}catch(_pl){setTimeout(function(){throw _pl;});}}
+if(_sh||_nm-moved<140||_nm>=next-3){next=Math.min(_nm+STEP,_nm-next>STEP?_nm+STEP:next+STEP);var _gi=_de;_de=[];for(var _hj=0;_hj<_gi.length;_hj++){try{_gi[_hj][1](_nm);}catch(_pl){setTimeout(function(){throw _pl;});}}}
+if(_de.length||_sh)_xf();else lastT=0;}
+window.__zxFrame=function(_gp){pre=_gp;_xf();};window.__zxWake=_xf;window.__zxSlow=function(){return slow;};var _ik=/iP(hone|ad|od)/.test(navigator.userAgent)||(navigator.platform===_y7gf(0x27)&&navigator.maxTouchPoints>1);window.__zxDpr=function(_gq){_gq=_gq||1.5;return Math.min(window.devicePixelRatio||1,_ik?Math.max(2,_gq):_gq);};window.__zxFit=function(_lr,_db,_i0){var _w7=_lr*_db*_i0*_i0,b=7.3e6;return _w7>b?_i0*Math.sqrt(b/_w7):_i0;};window.requestAnimationFrame=function(_ws){_de.push([++seq,_ws]);_xf();return seq;};window.cancelAnimationFrame=function(_db){for(var _hj=0;_hj<_de.length;_hj++)if(_de[_hj][0]===_db){_de.splice(_hj,1);return;}};})();
