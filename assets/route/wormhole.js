@@ -198,7 +198,7 @@ const imgs = [...sec.querySelectorAll('.wl__ph img')];
 if (PHONE) phoneList(imgs); else {
 /* round 10: one picture that fails (a thrown error in a generator, a network blip, a decode that gives up on a busy phone) must never
 leave the others blank, so every picture is fetched on its own (try / catch, one retry) and a picture in a swipe strip also asks
-for its next two neighbours, so a swipe never meets an empty box. The Luhansk skyline is a ready-made file now (the same grains the
+for its next two neighbours, so a swipe never meets an empty box. The skyline is a ready-made file now (the same grains the
 tunnel draws, rendered once): a phone no longer paints 160 000 grains and encodes a 900 KB data URL on its main thread. */
 const show = (im) => im.classList.add('is-in');
 const load = (im, tries = 0) => {
@@ -279,9 +279,9 @@ cb(true);
 }
 const PALS = `
 vec3 palette(float s,float sel){
-vec3 a1=vec3(.643,.545,1.), a2=vec3(1.,.70,.48), a3=vec3(1.,.93,.86);      // Luhansk: violet + ember
-vec3 b1=vec3(.643,.545,1.), b2=vec3(.44,.89,1.),  b3=vec3(.96,.95,1.);      // Kyiv: violet + cyan
-vec3 c1=vec3(.49,1.,.80),   c2=vec3(.44,.89,1.),  c3=vec3(.93,1.,.97);      // Ireland: mint + cyan
+vec3 a1=vec3(.89,.64,.35), a2=vec3(1.,.70,.48), a3=vec3(1.,.93,.86);      // Start: copper + ember
+vec3 b1=vec3(.89,.64,.35), b2=vec3(1.,.85,.63),  b3=vec3(.98,.94,.88);      // Middle: copper + cream
+vec3 c1=vec3(.92,.85,.62),   c2=vec3(1.,.80,.55),  c3=vec3(.97,.93,.85);      // End: sand + copper
 float k1=sst(uEmber,uEmber+26.,s), k2=sst(uIsle,uIsle+34.,s);
 vec3 p1=mix(mix(a1,b1,k1),c1,k2*.75), p2=mix(mix(a2,b2,k1),c2,k2), p3=mix(mix(a3,b3,k1),c3,k2);
 vec3 col = sel<.55?p1:(sel<.86?p2:p3);
@@ -1044,7 +1044,7 @@ for (const r of rings) {
 const d = r.s - sC; if (d < -3 || d > 110) continue;
 gl.uniform1f(rP.u.uS0, r.s);
 if (r.quiet) { gl.uniform3f(rP.u.uCol, 0.42, 0.40, 0.46); gl.uniform1f(rP.u.uI, 0.22); }
-else { const c = r.palette === 'isle' ? [0.6, 1, 0.85] : r.palette === 'ember' ? [1, 0.78, 0.6] : [0.75, 0.66, 1]; gl.uniform3f(rP.u.uCol, ...c); gl.uniform1f(rP.u.uI, 0.5); }
+else { const c = r.palette === 'isle' ? [0.95, 0.85, 0.6] : r.palette === 'ember' ? [1, 0.78, 0.6] : [0.89, 0.64, 0.35]; gl.uniform3f(rP.u.uCol, ...c); gl.uniform1f(rP.u.uI, 0.5); }
 gl.drawElements(gl.TRIANGLES, ribbonG.n, gl.UNSIGNED_SHORT, 0);
 }
 gl.useProgram(gP.p); common(gP.u); gl.bindVertexArray(gVao);

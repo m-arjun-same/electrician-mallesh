@@ -4,8 +4,8 @@ return () => ((s = Math.imul(s ^ (s >>> 15), 2246822507) ^ Math.imul(s ^ (s >>> 
 }
 const PAL = {
 ember: [['#2a1631', '#7a3a4c', '#e59a6a'], ['#1b1426', '#5a3157', '#f0b27e'], ['#20152a', '#6d3a3a', '#d98a5c']],
-violet: [['#120f24', '#3c2f7a', '#a48bff'], ['#0d1426', '#2a3e7a', '#79d2ff'], ['#171028', '#55307a', '#d6b8ff']],
-isle: [['#0c1a1c', '#2f5a52', '#a9e6c9'], ['#0f1820', '#3a5c6e', '#c9e8e6'], ['#111a16', '#4c6a4a', '#e8edd2']],
+violet: [['#171208', '#5c3d1e', '#e2a458'], ['#120e0c', '#46332a', '#ffd9a0'], ['#1a1208', '#6b4423', '#f5c98a']],
+isle: [['#16130c', '#5a4a2f', '#e8d9ae'], ['#100f0c', '#4c4230', '#efe3c2'], ['#181410', '#655234', '#f2e7c8']],
 silent: [['#121117', '#2a2830', '#6b6676']],
 };
 let NT = null;
@@ -147,7 +147,7 @@ yield;
 if (!quiet) { // soft violet bloom under the ink
 g.save(); g.filter = 'blur(28px)'; g.globalAlpha = 0.55; g.drawImage(yc, 0, 0); g.restore();
 yield;
-g.save(); g.globalCompositeOperation = 'source-atop'; g.fillStyle = '#a48bff'; g.fillRect(0, 0, w, h); g.restore();
+g.save(); g.globalCompositeOperation = 'source-atop'; g.fillStyle = '#e2a458'; g.fillRect(0, 0, w, h); g.restore();
 }
 yield;
 g.font = yearFont; g.fillStyle = ink; shadowed(g, String(year), x0, YB, 0.55);
@@ -164,7 +164,7 @@ c.bands = [];
 for (let i = 0; i < L.length; i++) {
 const l = L[i];
 g.font = F[l.r].f(l.z); g.letterSpacing = `${F[l.r].ls}px`;
-if (l.r === 'key' && !quiet) { g.save(); g.filter = 'blur(16px)'; g.fillStyle = '#a48bff'; g.globalAlpha = 0.42; g.fillText(l.t, w / 2, l.y); g.restore(); }
+if (l.r === 'key' && !quiet) { g.save(); g.filter = 'blur(16px)'; g.fillStyle = '#e2a458'; g.globalAlpha = 0.42; g.fillText(l.t, w / 2, l.y); g.restore(); }
 g.fillStyle = col[l.r]; shadowed(g, l.t, w / 2 + (l.r === 'stamp' ? F.stamp.ls / 2 : 0), l.y);
 if (l.r === 'stamp') { // hairlines either side: a place mark, not a heading
 g.fillStyle = quiet ? 'rgba(157,151,166,.6)' : 'rgba(217,199,168,.6)';
@@ -186,7 +186,7 @@ const c = document.createElement('canvas'); c.width = w; c.height = h;
 const g = c.getContext('2d');
 g.beginPath(); g.fillStyle = '#c8382c'; g.arc(60, 150, 18, 0, 6.283); g.fill();
 g.font = '500 92px Bricolage, sans-serif'; g.fillStyle = '#efe9df';
-g.save(); g.filter = 'blur(14px)'; g.fillStyle = '#a48bff'; g.globalAlpha = 0.6; g.fillText(text, 110, 182); g.restore();
+g.save(); g.filter = 'blur(14px)'; g.fillStyle = '#e2a458'; g.globalAlpha = 0.6; g.fillText(text, 110, 182); g.restore();
 g.fillText(text, 110, 182);
 return c;
 }
@@ -239,7 +239,7 @@ const md = mg.getImageData(0, 0, w, h).data;
 yield;
 const c = document.createElement('canvas'); c.width = w; c.height = h;
 const g = c.getContext('2d');
-const cols = ['#ffd2a8', '#ffb37a', '#cbb8ff', '#f4f0e8'];
+const cols = ['#ffd2a8', '#ffb37a', '#e8bd7f', '#f4f0e8'];
 for (let i = 0; i < 160000; i++) {
 const px = r() * w, py = r() * h, inside = md[((py | 0) * w + (px | 0)) * 4 + 3] > 100;
 if (!inside && r() > 0.012) continue;
