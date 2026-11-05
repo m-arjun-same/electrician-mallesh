@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MALLESH — Electrician · Portfolio</title>
+<meta name="description" content="Mallesh — self-employed electrician, business portfolio: house wiring, lighting, fans, switches, inverter and fault repair. You book me, I do the work myself. Every wire, every switch, one safe circuit.">
+<meta name="theme-color" content="#0b0a10">
+<meta name="color-scheme" content="dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+<script src="assets/js/boot.js"></script>
+<script src="assets/js/sound.js" defer></script>
+<script src="assets/js/vendor/lenis.min.js" defer></script>
+<script src="assets/js/site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<canvas id="grain" aria-hidden="true"></canvas>
+
+<header class="hdr">
+  <div class="hdr-bg"></div>
+  <a class="hdr-logo" href="#top" aria-label="Mallesh — home"><span class="lg-name">MALLES<b>H</b></span><span class="lg-sub">ELECTRICIAN</span></a>
+  <div class="hdr-mid" data-chap>Portfolio</div>
+  <nav class="hdr-nav">
+    <button class="snd-btn" id="sndBtn" type="button" aria-pressed="false">Sound <span class="snd-state">off</span></button>
+    <a class="press press--sm" href="#contact"><span>Book a visit</span></a>
+    <button class="burger" id="menuBtn" type="button" aria-expanded="false"><span>Menu</span><i></i><i></i></button>
+  </nav>
+</header>
+
+<div class="menu" id="menu" aria-hidden="true">
+  <nav class="menu-nav">
+    <a href="#work"><em>01</em> Services</a>
+    <a href="#board"><em>02</em> The full board</a>
+    <a href="#phone"><em>03</em> On the phone</a>
+    <a href="#delivered"><em>04</em> Delivered</a>
+    <a href="#contact"><em>05</em> Book a visit</a>
+  </nav>
+  <p class="menu-note">Every wire, every switch, <i>one safe circuit.</i></p>
+</div>
+
+<main id="main">
+  <!-- HERO — same composition as the reference case: 100svh, bottom line, serif tagline -->
+  <section class="c-hero" id="top" data-chap="Portfolio">
+    <div class="cover-media" aria-hidden="true">
+      <div class="cover-art">
+        <svg class="circuit" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" fill="none">
+          <path class="wire w1" d="M-20 620 H420 L520 520 H1460"/>
+          <path class="wire w2" d="M-20 700 H300 L420 600 H900 L1010 490 H1460"/>
+          <path class="wire w3" d="M180 -20 V300 L300 420 V920"/>
+          <path class="wire w4" d="M1180 -20 V260 L1060 380 V920"/>
+          <path class="wire w5" d="M-20 180 H520 L640 300 H1460"/>
+          <circle class="node" cx="420" cy="620" r="10"/><circle class="node" cx="900" cy="600" r="10"/>
+          <circle class="node" cx="300" cy="420" r="10"/><circle class="node" cx="1060" cy="380" r="10"/>
+          <circle class="node" cx="640" cy="300" r="10"/>
+          <g class="bulb"><circle cx="720" cy="330" r="86"/><path d="M692 402 h56 M700 424 h40"/></g>
+        </svg>
+        <div class="cover-glow"></div>
+      </div>
+    </div>
+    <div class="cover-top margins"><span>Self-employed electrician · homes, shops &amp; offices</span><span class="ct-r">Wiring / Lighting / Repair</span></div>
+    <div class="cover-bot margins">
+      <p class="cover-kicker rv">Business Portfolio — Mallesh</p>
+      <h1 class="cover-title"><span class="rv">MALLES</span><span class="rv rv-d1">H<i>.</i></span></h1>
+      <div class="cover-line rv">
+        <p class="cover-tag">Every wire, every switch, <i>one safe circuit.</i></p>
+        <p class="cover-side">House wiring, lighting, fans &amp; boards —<br>done clean, tested, and safe.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- META — 4-col grid, same as reference -->
+  <section class="c-meta margins" aria-label="Facts">
+    <div class="rv"><h3>Field</h3><p>Self-employed electrician,<br>homes &amp; small business</p></div>
+    <div class="rv"><h3>Scope</h3><p>My business portfolio —<br>services, work &amp; booking</p></div>
+    <div class="rv"><h3>Work</h3><p>Wiring · Lighting · Fans<br>Inverter · Fault repair</p></div>
+    <div class="rv"><h3>Book</h3><p><a href="#contact">Book a visit ↓</a><br>Reply within one working day</p></div>
+  </section>
+
+  <!-- 01 / 02 INTRO — 2-col -->
+  <section class="c-intro margins" id="work">
+    <article class="rv">
+      <p class="sec-num">01 <span>/ 05</span></p><h2 class="sec-h">My business</h2>
+      <p class="lead">I work for myself — <i>you book me, I do the work.</i> No company, no middleman, no strangers sent to your home: one electrician, accountable for every wire.</p>
+    </article>
+    <article class="rv">
+      <p class="sec-num">02 <span>/ 05</span></p><h2 class="sec-h">What I do</h2>
+      <p class="lead">Complete electrical work: new wiring and rewiring, switchboards, lighting, fans, inverter &amp; UPS, earthing and safety checks — every job tested before I leave.</p>
+    </article>
+  </section>
+
+  <!-- SERVICES ROWS -->
+  <section class="c-sec margins" aria-label="Services">
+    <div class="rows">
+      <article class="row rv"><span class="row-n">01</span><h3>House wiring &amp; rewiring</h3><p>New points, full rewires, concealed wiring — neat runs, labelled boards.</p><span class="row-tag">Full / Partial</span></article>
+      <article class="row rv"><span class="row-n">02</span><h3>Switches, fans &amp; lighting</h3><p>Boards, MCBs, fans, LEDs and fittings fitted straight and level.</p><span class="row-tag">Fit &amp; finish</span></article>
+      <article class="row rv"><span class="row-n">03</span><h3>Inverter &amp; UPS</h3><p>Sizing, installation and battery care so backup kicks in, every time.</p><span class="row-tag">Backup</span></article>
+      <article class="row rv"><span class="row-n">04</span><h3>Fault finding &amp; repair</h3><p>Tripping, sparking, dead points — traced to the cause, not the symptom.</p><span class="row-tag">Same-visit fix*</span></article>
+      <article class="row rv"><span class="row-n">05</span><h3>Earthing &amp; safety check</h3><p>Earthing, leakage and load check for the whole home, in one visit.</p><span class="row-tag">Safety first</span></article>
+    </div>
+    <p class="fine rv">*When the fault needs no new parts. Every job is tested live before handover.</p>
+  </section>
+
+  <!-- 03 THE BOARD — interactive long scroller, same interaction as reference -->
+  <section class="c-sec c-long margins" id="board">
+    <p class="sec-num rv">03 <span>/ 05</span></p><h2 class="sec-h rv">The full board</h2>
+    <p class="lead rv">Scroll the whole service board. <i>Press the button, then move up or down to glide through it.</i></p>
+    <div class="frame frame--long rv">
+      <div class="frame-bar"><span>mallesh — service board</span><span class="fb-dot"></span></div>
+      <div class="long-view" id="longView" tabindex="0" aria-label="Full service board, scrollable">
+        <div class="long-page">
+          <h4>MALLESH <i>— services &amp; guide rates</i></h4>
+          <ul>
+            <li><b>New wiring point</b><span>per point</span></li>
+            <li><b>Switch / socket replace</b><span>per piece</span></li>
+            <li><b>Fan fitting / regulator</b><span>per fan</span></li>
+            <li><b>LED &amp; fitting install</b><span>per fitting</span></li>
+            <li><b>MCB / board upgrade</b><span>per board</span></li>
+            <li><b>Inverter + battery setup</b><span>per home</span></li>
+            <li><b>Fault visit &amp; diagnosis</b><span>per visit</span></li>
+            <li><b>Earthing &amp; safety audit</b><span>per home</span></li>
+            <li><b>Full home rewire</b><span>site visit first</span></li>
+            <li><b>Shop / office fit-out</b><span>site visit first</span></li>
+          </ul>
+          <p class="long-note">Final price is confirmed on site, before work starts. No surprises after.</p>
+          <h4>How a job <i>runs</i></h4>
+          <ol><li>Book a visit</li><li>Check &amp; quote on site</li><li>Work, tested live</li><li>Clean handover</li></ol>
+        </div>
+      </div>
+      <button class="press long-btn" id="longBtn" type="button"><span>Scroll the board</span></button>
+    </div>
+  </section>
+
+  <!-- 04 PHONE — 390px screens -->
+  <section class="c-sec margins" id="phone">
+    <p class="sec-num rv">04 <span>/ 05</span></p><h2 class="sec-h rv">Built for the thumb first</h2>
+    <p class="lead rv">Real screens, <i>at 390 pixels wide</i> — book, pick a service, check safety, in seconds.</p>
+    <div class="phones">
+      <figure class="phone rv"><div class="ph-scr"><h5>Book a visit</h5><p class="ph-big">Power problem?</p><p>Pick a time — Mallesh confirms the visit.</p><span class="ph-btn">Today · 4–6 pm</span><span class="ph-btn ph-ghost">Tomorrow · morning</span></div><figcaption>Booking</figcaption></figure>
+      <figure class="phone rv"><div class="ph-scr"><h5>Services</h5><p class="ph-big">Wiring, lights, fans, backup.</p><ul><li>Wiring</li><li>Lighting</li><li>Inverter</li><li>Repair</li></ul></div><figcaption>Services &amp; rates</figcaption></figure>
+      <figure class="phone rv"><div class="ph-scr"><h5>Safety check</h5><p class="ph-big">Tested. Safe. Done.</p><p>Earthing ✓ &nbsp; Leakage ✓<br>Load ✓ &nbsp; Board ✓</p><span class="ph-btn">Get my check</span></div><figcaption>Safety</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- 05 DELIVERED — stamps -->
+  <section class="c-sec margins c-stamps" id="delivered">
+    <p class="sec-num rv">05 <span>/ 05</span></p><h2 class="sec-h rv">What you get</h2>
+    <div class="stamps">
+      <div class="stamp rv"><span>01</span><h3>Clear quote</h3><p>Price agreed on site, before work starts.</p></div>
+      <div class="stamp rv"><span>02</span><h3>Neat work</h3><p>Straight runs, level fittings, labelled board.</p></div>
+      <div class="stamp rv"><span>03</span><h3>Tested live</h3><p>Every point checked in front of you.</p></div>
+      <div class="stamp rv"><span>04</span><h3>Safe first</h3><p>Earthing and leakage checked, always.</p></div>
+      <div class="stamp rv"><span>05</span><h3>Clean finish</h3><p>Work area left clean. No dust, no debris.</p></div>
+      <div class="stamp rv"><span>06</span><h3>After-care</h3><p>Call back if it trips — I will sort it.</p></div>
+    </div>
+  </section>
+
+  <!-- FINALE + CURTAIN FOOTER -->
+  <section class="finale" data-chap="06 Contact">
+    <p class="fin-k rv">Next job</p>
+    <a class="fin-big rv" href="#contact">YOUR HOME,<i> fully powered.</i></a>
+    <p class="fin-sub rv">Open the contact below and book a visit.</p>
+  </section>
+
+  <footer class="curtain" id="contact">
+    <div class="margins">
+      <h2 class="cur-h rv">Let’s talk<i>.</i></h2>
+      <p class="cur-lead rv">Tell me what is not working, or what you are building. <i>I reply within one working day.</i></p>
+      <form class="f rv" id="bookForm">
+        <label>Your name<input required name="name" autocomplete="name" placeholder="Your name"></label>
+        <label>Phone / WhatsApp<input required name="phone" inputmode="tel" placeholder="Phone number"></label>
+        <fieldset><legend>Service needed</legend><div class="chips">
+          <label class="chip"><input type="radio" name="svc" value="Wiring" checked><span class="chip-t">Wiring</span></label>
+          <label class="chip"><input type="radio" name="svc" value="Lighting / Fans"><span class="chip-t">Lighting / Fans</span></label>
+          <label class="chip"><input type="radio" name="svc" value="Inverter"><span class="chip-t">Inverter</span></label>
+          <label class="chip"><input type="radio" name="svc" value="Fault repair"><span class="chip-t">Fault repair</span></label>
+          <label class="chip"><input type="radio" name="svc" value="Safety check"><span class="chip-t">Safety check</span></label>
+        </div></fieldset>
+        <label>About the job<textarea name="msg" rows="3" placeholder="e.g. Main board trips every evening…"></textarea></label>
+        <button class="press press--big" type="submit"><span>Send request</span></button>
+        <p class="f-ok" id="formOk" hidden>Got it — your request is noted. Mallesh will reply within one working day.</p>
+        <p class="f-note">No spam, no sharing your number. Your details are only used to arrange the visit.</p>
+      </form>
+      <div class="cur-foot"><span>© 2026 Mallesh — Electrician</span><span class="cf-mid">Every wire, every switch, one safe circuit.</span><a href="#top">Back to top ↑</a></div>
+    </div>
+  </footer>
+</main>
+</body>
+</html>
